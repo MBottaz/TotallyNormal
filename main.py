@@ -74,11 +74,12 @@ np.random.seed(seed)
 approx = stumpy.scrump(df['Consumi GF [kWh]'], m, percentage=0.01, pre_scrump=True)
 approx.update()  # Update SCRUMP approximation
 approx_P = approx.P_  # Extract the approximation result
+approx_I = approx.I_  # Extract the index result
 
 # plot_data_and_MP(df, approx_P)
 k=10
 
-smallest_indices = find_k_biggest(approx_P , k)
+smallest_indices = find_k_biggest(approx_I , k)
 
 print(smallest_indices)
 
